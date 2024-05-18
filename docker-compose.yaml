@@ -1,0 +1,15 @@
+services :
+  debian-ci :
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    command: |
+      bash -c "
+        echo '--- ROOT DIRECTORY ---'
+        pwd
+        ls -la
+        echo '--- VERSIONS ---'
+        cat versions.txt
+      "
