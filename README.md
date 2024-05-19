@@ -66,14 +66,14 @@ services :
   debian-ci:
     image: zouloux/debian-ci
   volumes:
-  	# If docker is used, link to host docker sock 
+    # If docker is used, link to host docker sock 
     - /var/run/docker.sock:/var/run/docker.sock
   command: |
     bash -c "
-	  echo "PWD: $(pwd)"
-      echo "Directory:"
-	  ls -la
-	  echo "Versions:"
+      echo '--- ROOT DIRECTORY ---'
+      pwd
+      ls -la
+      echo '--- VERSIONS ---'
       cat versions.txt
     "
 ```
