@@ -9,7 +9,7 @@ It's based on **Debian 12**, with :
 - **Composer**
 - **Bun**
 
-> Available on Docker Hub at `zouloux/debian-ci`
+> Available on Docker Hub at [zouloux/docker-debian-ci](https://hub.docker.com/r/zouloux/docker-debian-ci)
 
 ## Versions
 
@@ -40,7 +40,7 @@ In your `.gitlab-ci.yml` file :
 
 ```yaml
 image:
-  name: zouloux/docker-ci-debian
+  name: zouloux/docker-debian-ci
 ```
 
 ## With Gitea Actions or Act Runner
@@ -56,7 +56,7 @@ jobs:
 ## With Docker 
 
 ```bash
-docker run -it zouloux/docker-ci-php-node bash
+docker run -it zouloux/docker-debian-ci bash
 ```
 
 ## With Docker Compose
@@ -64,7 +64,7 @@ docker run -it zouloux/docker-ci-php-node bash
 ```yaml
 services :
   debian-ci:
-    image: zouloux/debian-ci
+    image: zouloux/docker-debian-ci
   volumes:
     # If docker is used, link to host docker sock 
     - /var/run/docker.sock:/var/run/docker.sock
